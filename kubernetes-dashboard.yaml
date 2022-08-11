@@ -5,7 +5,7 @@ metadata:
   namespace: kubernetes-dashboard
 spec:
   hosts:
-  - "kubernetes-dashboard.concavecraft.com"
+  - "kubernetes-dashboard.mydomain.com"
   gateways:
   - concave-prod/prod-gw
   http:
