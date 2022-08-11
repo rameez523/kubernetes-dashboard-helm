@@ -44,4 +44,26 @@ NOTE:-
 Need to Configure virtual service for istio to enable public access inside kubernetes cluster.
 we have file name kubernetes-dashboard.yaml for Virtual Service Istio. This will connects with Gateway Istio configuration where we set all the public URL's and TLS Secrets Configuration.
 
+If its not working with http then edit deployment and pass these arguemnts:-
+
+containers:
+        - name: kubernetes-dashboard
+          image: kubernetesui/dashboard:v2.2.0
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8443
+              protocol: TCP
+            - containerPort: 9090
+              protocol: TCP  
+          args:
+            #- --auto-generate-certificates
+            - --namespace=kubernetes-dashboard
+            - --enable-skip-login
+            - --disable-settings-authorizer
+            - --enable-insecure-login
+            - --insecure-bind-address=0.0.0.0
+
+
+URL  https://medium.com/@tejaswi.goudru/disable-authentication-https-in-kubernetes-dashboard-2fada478ce91
+
 That's it :)
