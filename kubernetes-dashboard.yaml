@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: kubernetes-dashboard-vsvc
+  namespace: kubernetes-dashboard
+spec:
+  hosts:
+  - "kubernetes-dashboard.concavecraft.com"
+  gateways:
+  - concave-prod/prod-gw
+  http:
+  - match:
+    - uri:
+        prefix: "/"
+    route:
+    - destination:
+        port:
+          number: 80
+        host: kubernetes-dashboard
