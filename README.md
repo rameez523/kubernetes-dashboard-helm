@@ -66,4 +66,11 @@ containers:
 
 URL  https://medium.com/@tejaswi.goudru/disable-authentication-https-in-kubernetes-dashboard-2fada478ce91
 
+
+
+Create an admin user for kubernetes-dashboard follow this :- 
+
+URL https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md
+
+
 That's it :)
